@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		<title>Emoji Practice</title>
+		<style>
+			/*add css styling here*/
+			#emoPicker{
+				display: block;/*saoiughrihsuhgfuahguoiahgrouahgoueajhgoukhajk,jtfagvhjf*/
+				background-color: white;
+				height: 180px;
+				width: 500px;
+				border: 2px solid black;
+			}
+			.bar{
+
+				width: 100%;
+			}
+			#headerBar{
+				position: relative;
+				top: 0px;
+				left: 0px;
+				height: 23px;
+				background-color: white;
+				border-bottom: 1px solid grey;
+			}
+			#nameBar{
+				position: relative;
+				top: 0px;
+				left: 0px;
+				height: 20px;
+				background-color: white;
+				border-bottom: 1px solid grey;
+
+			}
+			.emoIcons{
+				color: #5c5a56;
+				outline: none;
+				border: none;
+				background-color: white;
+				font-size: 16px;
+				padding-left: 10px;
+				padding-right: 10px;
+				position: relative;
+				top: 50%;
+				transform: translate(0%, -50%);
+				cursor: pointer;
+				font-weight: lighter;
+			}
+			#catName{
+				color: #5c5a56;
+				font-family: "Courier New";
+				font-size: 14px;
+
+			}
+			#emoBox{
+				overflow: auto;
+				overflow-y: hidden;
+				position: relative;
+				height: 136px;
+			}
+
+			.emoBtn{
+				background-color: white;
+				outline: none;
+				border: none;
+				width: 25px;
+				padding-left: 5px;
+				padding-right: 5px;
+
+			}
+			 
+			
+		</style>
+	</head>
+	<body>
+	
+		<input id="emojiInput">
+
+		<br>
+
+		<button id="toggleEPButotn" onclick="toggleEP()">Toggle EmojiPicker</button>
+		<br><br>
+		<div id="emoPicker">
+			<div id="headerBar" class="bar">
+				<button class="emoIcons" id="ei1" value="Smileys & Emotion" onclick="selectCat(this.value)">
+					<i class="far fa-smile"></i>
+				</button>
+				<button class="emoIcons" id="ei2" value="People & Body" onclick="selectCat(this.value)">
+					<i class="fas fa-child"></i>
+				</button>
+				<button class="emoIcons" id="ei3" value="Activities" onclick="selectCat(this.value)">
+					<i class="fas fa-baseball-ball"></i>
+				</button>
+				<button class="emoIcons" id="ei4" value="Symbols" onclick="selectCat(this.value)">
+					<i class="fas fa-icons"></i>
+				</button>
+				<button class="emoIcons" id="ei5" value="Objects" onclick="selectCat(this.value)">
+					<i class="far fa-lightbulb"></i>
+				</button>
+				<button class="emoIcons" id="ei6" value="Food & Drink" onclick="selectCat(this.value)">
+					<i class="fas fa-hamburger"></i>
+				</button>
+				<button class="emoIcons" id="ei7" value="Travel & Places" onclick="selectCat(this.value)">
+					<i class="fas fa-plane"></i>
+				</button>
+				<button class="emoIcons" id="ei8" value="Animals & Nature" onclick="selectCat(this.value)">
+					<i class="fas fa-dog"></i>
+				</button>
+				<button class="emoIcons" id="ei9" value="Flags" onclick="selectCat(this.value)">
+					<i class="fas fa-flag"></i>
+				</button>
+				
+			</div>
+			<div id="nameBar" class="bar">
+				<label id="catName"></label>
+			</div>
+			<div id="emoBox">
+
+			</div>
+		</div>
+		
+		<script src="main.js"></script>
+		<script>
+			function selectCat(cat){
+				var index = "ei" + (catArr.indexOf(cat) + 1).toString();
+				var elems = document.getElementsByClassName("emoIcons");
+				
+				for (var i=0;i<elems.length;i++){
+					if (elems[i].id == index){
+						elems[i].setAttribute("style", "color: black; font-weight:bold;border-bottom:1px solid black");
+					}else{
+						elems[i].setAttribute("style", "color: #5c5a56; font-weight:normal;");
+					}
+				}
+				document.getElementById('catName').innerText = cat.toUpperCase();
+
+				const myNode = document.getElementById("emoBox");
+
+				while (myNode.firstChild) {
+			        myNode.removeChild(myNode.lastChild);
+			    }
+
+
+
+			    var tempEmos = mainArr[cat];
+			    var counter = 0;
+			    var divNo = 0;
+			    while (counter < tempEmos.length){
+			    	var subDiv = document.createElement("div");
+			    	subDiv.setAttribute("class", "subCont");
+			    	var leftA = (25 * divNo).toString() + "px";
+			  
+			    	subDiv.setAttribute("style", ("position:absolute;top:0px;left:" + leftA + ";"));
+			    	
+			    	document.getElementById("emoBox").appendChild(subDiv);
+			    	for (var x=0;x<6;x++){
+			    		if (counter >= tempEmos.length){
+			    			break;
+			    		}
+			    		var elem = document.createElement("button");
+
+				    	var value = tempEmos[counter].emoji;
+
+				    	elem.id = "emo-" + counter.toString();
+				    	elem.setAttribute("class", "emoBtn");
+				    	elem.innerText = value;
+				    	elem.setAttribute("onclick", "addEmoji(this.innerText)");
+				    	subDiv.appendChild(elem);
+				    	subDiv.appendChild(document.createElement("br"));
+				    	counter += 1
+			    	}
+			    	divNo += 1;
+			    	document.getElementById("emoBox").appendChild(document.createElement("br"));
+			    }
+
+
+			}
+			function toggleEP(){
+				if (document.getElementById("emoPicker").style.display == "none"){
+					document.getElementById("emoPicker").style.display = "block";
+				}else{
+					document.getElementById("emoPicker").style.display = "none"
+				}
+			}
+
+
+
+			function addEmoji(emo){
+				document.getElementById("emojiInput").value += emo;
+			}
+			function outputCode(emo){
+				console.log(emo);
+			}
+			var mainArr = {
+				"Smileys & Emotion": [],
+				"People & Body": [],
+				"Activities": [],
+				"Symbols": [],
+				"Objects": [],
+				"Food & Drink": [],
+				"Travel & Places": [],
+				"Animals & Nature": [],
+				"Flags": [],
+			};
+
+			var catArr = Object.keys(mainArr);
+			function sortEmojis(){
+				for (var i=0;i<emoArr.length;i++){
+					var currentEmoji = emoArr[i];
+					for (var x=0;x<catArr.length;x++){
+						if (currentEmoji.category == catArr[x]){
+							mainArr[catArr[x]].push(currentEmoji);
+						}
+					}
+				}
+			}
+
+			sortEmojis();
+
+
+
+			
+		</script>
+	</body>
+</html>
+

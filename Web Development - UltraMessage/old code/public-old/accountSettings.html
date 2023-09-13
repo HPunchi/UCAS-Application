@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<title>Account Settings</title>
+		<link rel="stylesheet" href="css/accountSettingsStyles.css"></link>
+
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+		<script src="js/encr-decr.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	</head>
+	<body>
+		<div id="mainDIV">
+			<div id="titleDIV">
+				<label id="mainTitle">Account Settings</label>
+				<br>
+			</div>
+
+			<div id="accountLabelsDIV">
+				<label id="forenameLabel">Forename:</label><br>
+				<label id="surnameLabel">Surname:</label><br>
+				<label id="dobLabel">Date of Birth:</label><br>
+				<label id="genderLabel">Gender:</label><br>
+				<label id="usernameLabel">Username:</label><br>
+				<label id="passwordLabel">Password:</label><br>
+				<label id="countryLabel">Country:</label><br>
+				<label id="themeLabel">Theme:</label><br>
+			</div>
+			<div id="accountStatiDIV">
+				<label id="forenameStatus"></label><input class="editInput" id="eForename" style="display:none;" autocomplete="off"  placeholder="New Forename:"><br>
+
+				<label id="surnameStatus"></label><input class="editInput" id="eSurname" style="display:none;" autocomplete="off" placeholder="New Surname:"><br>
+
+				<label id="dobStatus"></label><input class="editInput" id="eDOB" style="display:none;" autocomplete="off" type="date" ><br>
+
+				<label id="genderStatus"></label><input class="editInput" id="eGender" style="display:none;" autocomplete="off" placeholder="New Gender [male/female/other]:"><br>
+
+				<label id="usernameStatus"></label><br>
+
+				<label id="passwordStatus">......</label><input class="editInput" id="ePassword" autocomplete="off" type="password" style="display:none;" placeholder="Enter old password:"><br>
+
+				<label id="countryStatus"></label><br>
+
+				<label id="themeStatus"></label><input class="editInput" id="eTheme" style="display:none;" autocomplete="off" placeholder="New Theme [light/dark]:"><br>
+			</div>
+
+			<button id="togglePasswordButton" onclick="showPassword()"><i class="far fa-eye"></i></button>
+
+			<div id="editButtonsDIV">
+				<button id="forenameEdit" onclick="editForename()" class="editButton"><i class="fas fa-pencil-alt"></i></button><br>
+				<button id="surnameEdit" onclick="editSurname()" class="editButton"><i class="fas fa-pencil-alt"></i></button><br>
+				<button id="dobEdit" onclick="editDOB()" class="editButton"><i class="fas fa-pencil-alt"></i></button><br>
+				<button id="genderEdit" onclick="editGender()" class="editButton"><i class="fas fa-pencil-alt"></i></button><br>
+				<br>
+				<button id="passwordEdit" onclick="editPassword()" class="editButton"><i class="fas fa-pencil-alt"></i></button><br>
+				<button id="countryEdit" onclick="editCountry()" class="editButton"><i class="fas fa-pencil-alt"></i></button><br>
+				<button id="themeEdit" onclick="editTheme()" class="editButton"><i class="fas fa-pencil-alt"></i></button><br>
+			</div>
+
+			<button id="saveButton" class="mainButtons" onclick="save()">Save and Exit</button>
+
+
+		</div>
+		<script>
+			var firebaseConfig = {
+			    apiKey: "AIzaSyBsz6HbTse8aNB4Xbtc-6d5LQFsfGaHatI",
+			    authDomain: "ultra-f4eb9.firebaseapp.com",
+			    projectId: "ultra-f4eb9",
+			    storageBucket: "ultra-f4eb9.appspot.com",
+			    databaseURL: "https://ultra-f4eb9-default-rtdb.firebaseio.com/",
+			    messagingSenderId: "412659898029",
+			    appId: "1:412659898029:web:6a03632d2c745286695824",
+			    measurementId: "G-P3MTE52HHX"
+			};
+			  
+			firebase.initializeApp(firebaseConfig);
+		</script>
+
+		<script src="js/accountSettingsMain.js"></script>
+	</body>
+
+</html>
+

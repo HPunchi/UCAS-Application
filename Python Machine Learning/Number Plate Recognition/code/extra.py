@@ -18,4 +18,4 @@ for file in files:
         process(root + '\\' + file)
         
         
-#program to iterate through images in directly and display them
+#program to iterate through images in directory and display them

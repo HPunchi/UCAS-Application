@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.theme-light {
+    --color-primary: #4275f5;
+    --color-secondary: #ffffff;
+    --font-color: #262020;
+ }.theme-dark {
+    --color-primary: #4275f5;
+    --color-secondary: #262020;
+    --font-color: #ffffff;
+ }
+
+body, html{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.bg-img{
+    background-image: url(https://images.hdqwalls.com/download/city-4k-buildings-skyscraper-view-l3-1920x1080.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+    /* background-size: 120%; */
+    
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    height: 100%;
+    width: auto;
+
+}
+
+
+
+
+
+#icoN{
+	padding-left: 15px;
+}
+#icoB{
+	padding-right: 15px;
+}
+#icoE{
+	padding-left: 15px;
+}
+#nextDIV{
+	position: absolute;
+	bottom: 30px;
+	right: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, 0%);
+}
+
+#mainDIV{
+	background-color: var(--color-secondary);
+	border-radius: 45px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 960px;
+	max-width: 960px;
+
+	height: 600px;
+}
+#titleDIV{
+	
+	border-radius: 45px;
+	position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+	width: 100%;
+}
+#column1DIV{
+	position: absolute;
+	left: 40px;
+	top: 120px;
+	
+}
+#column2DIV{
+	position: absolute;
+	right: 120px;
+	top: 120px;
+	
+
+}
+#column3DIV{
+	position: absolute;
+	left: 40px;
+	top: 120px;
+	display: none;
+
+}
+#column4DIV{
+	position: absolute;
+	left: 40px;
+	top: 120px;
+	display: none;
+
+}
+#column5DIV{
+	position: absolute;
+	left: 40px;
+	top: 120px;
+	
+
+}
+#mainTitle{
+	color: var(--font-color);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 60px;
+	font-weight: lighter;
+	position: absolute;
+	top: 30px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+}
+/*
+#submitButtonDIV{
+	position: absolute;
+	top: 30px;
+	right: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, 0%);
+}*/
+
+#backButtonDIV{
+	position: absolute;
+	top: 30px;
+	left: 8px;
+}
+
+
+.btns{
+	width: 175px;
+	height: 60px;
+	padding: 10px;
+	background-color: var(--color-primary);
+	color: #ffffff;
+	border-radius: 45px;
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 28px;
+	font-weight: normal;
+	outline: none;
+	border-style: solid;
+	border: none;
+}
+.verifBtn{
+	width: 300px;
+	height: 50px;
+	padding: 10px;
+	background-color: var(--color-secondary);
+	color: var(--color-primary);
+	border-radius: 45px;
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	text-decoration: underline;
+	outline: none;
+	border: none;
+}
+.labelText{
+	color: var(--font-color);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+
+}
+.commandLabel{
+	color: var(--font-color);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 32px;
+	font-weight: lighter;
+
+}
+.statusText{
+	color: var(--color-primary);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 35px;
+	font-weight: normal;
+}
+.dataInput{
+	padding: 5px;
+	border-radius: 20px;
+	height: 30px;
+	width: 300px;
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+	color: var(--font-color);
+	background-color: var(--color-secondary);
+	border-color: var(--font-color);
+	border: 1px;
+	outline: none;
+	box-shadow: none;
+	border-style: solid;
+}
+.radioText{
+	color: var(--font-color);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+}
+.radioButton{
+	height: 15px;
+	width: 15px;
+	
+	border: 2px;
+	background-color: var(--color-secondary);
+}
+
+#countries{
+    background-color: var(--color-secondary);
+    color: var(--font-color);
+    border-color: var(--font-color);
+    font-weight: normal;
+    border: 0.5px solid;
+}
+
+.errorText{
+	color: rgb(255, 0, 0);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+	
+}
+.codeEntry{
+	color: var(--font-color);
+	outline: none;
+	border: 1px solid;
+	background-color: var(--color-secondary);
+	border-color: var(--font-color);
+	height: 30px;
+	width: 100px;
+	border-radius: 15px;
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+	border-style: solid;
+}
+
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
+    -webkit-appearance: none;
+}
+
+
+
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: absolute;
+  font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 22px;
+  height: 45px;
+  width: 315px;
+  border-radius: 45px;
+  border: 2px solid grey;
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+.screenButton:hover{
+    box-shadow: none;
+    /* box-shadow: inset 0px 6px 16px 4px rgba(0, 0, 0, 0.02); */
+}
+
+.icon{
+    position: absolute;
+    /* transform: translate(-100%, -100%); */
+    top: -30px;
+    left: 165px;
+    width: 175px;
+    height: auto;
+}
+
+#theme-switcher{
+    border: none;
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    bottom: 15px;
+    outline: none;
+    left: 15px;
+    z-index: 9999;
+    cursor: pointer;
+    box-shadow: 0px 6px 16px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.25s ease-in-out;
+}
+
+#theme-switcher:hover{
+    box-shadow: none;
+}
+
+#theme-switcher svg{
+    fill: var(--font-color);
+}
+
+button{
+	cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+.image-upload{
+	padding-top: 10px;
+	padding-left: 50px;
+}
+.image-upload > input
+{
+	
+    display: none;
+
+}
+
+.image-upload img
+{
+    
+    cursor: pointer;
+}
+#uploadIcon{
+	color: var(--font-color);
+	padding-top: 15px;
+	font-size: 45px;
+	border: none;
+	cursor: pointer;
+
+
+
+}
+
+
+
+
+
+#previewImage{
+	height: 100%;
+	width: 100%;
+	border: solid;
+	border-radius: 50%;
+	border-width: 3px;
+	border-color: var(--font-color);
+	background-color: #fff;
+
+}
+#imageCover{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	width: 100%;
+}
+.linkButton{
+	color: var(--color-primary);
+	
+	outline: none;
+	border: solid;
+	border-radius: 45px;
+	background-color: var(--color-secondary);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 24px;
+}
+#uPrev{
+	position: absolute;
+	left: 50%;
+	bottom: -50px;
+	margin-right: -50%;
+	transform: translate(-50%, 0%);
+}
+
+#previewDIV{
+	height: 300px;
+	width: 300px;
+	position: absolute;
+	top: 0px;
+	left: 500px;
+	
+}
+#clearButton{
+	color: var(--font-color);
+	background-color: var(--color-secondary);
+	border: none;
+	outline: none;
+	font-size: 24px;
+}
+
+
+
+.wpIMG{
+	height: 162px;
+	width: 288px;
+	position: relative;
+	
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, 0%);
+
+	
+	top: 30px;
+}
+#wpPrevs{
+	width: 320px;
+	height: 300px;
+	
+	overflow: scroll;
+	overflow-x: hidden;
+	
+
+}
+
+.prevWP{
+	height: 202px;
+	width: 308px;
+	border: 1px solid;
+	border-color: var(--font-color);
+	border-radius: 15px;
+	
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(125, 128, 133, 0.5);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-track { 
+    border-radius: 5px; 
+} 

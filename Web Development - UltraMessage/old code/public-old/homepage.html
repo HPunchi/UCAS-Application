@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>UltraMessage</title>
+		<link rel="stylesheet" href="css/homepageStyles.css"></link>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		<link rel="icon" href="images/logo.png">
+		
+		<audio id="msgSent" style="display:none" controls>
+				  
+		 	 <source src="audio/msg-sent.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+		</audio>
+		<audio id="msgReceived" style="display:none" controls>
+				  
+		 	 <source src="audio/msg-received.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+		</audio>
+
+	</head>    
+	<div id="mainBG" class="bg"></div> 
+	<body id="mainBody">
+		<div id="imgPUDIV" onclick="closeImageViewer()">
+			<img id="displayImage" onclick="closeImageViewer()">
+			<button id="closeButton" onclick="closeImageViewer()"><i class="fas fa-times"></i></button>
+		</div>
+
+		<div id="textPOPUP" class="popupDIV" onclick="closePopup()">
+			<div class="popup">
+				<img id="popupIMG" class="pImg">
+				<label id="popupTitle" class="pTitle"></label>
+				<label id="popupText" class="pText"></label>
+				<button id="okButton" onclick="closePopup()">Ok</button>
+			</div>
+			<button id="closeButton" onclick="closePopup()"><i class="fas fa-times"></i></button>
+		</div>
+
+		<div id="inputPOPUP" class="popupDIV">
+			<div class="popup">
+				<img id="iPopImg" class="pImg">
+				<label id="iPopTitle" class="pTitle"></label>
+
+				<label id="iPopPrompt" class="pText"></label><br>
+				<input id="iPopInput" autocomplete="off">
+				<button id="cancelButton" onclick="closeIPopup()">Cancel</button>
+				<button id="okButton" onclick="closeIPopup()">Ok</button>
+
+			</div>
+			
+		</div>
+	
+		<div id="optionsDIV">
+			<img id="pfpIMG" onclick="imageViewer(this.src)">
+
+			
+			<br>
+			<div id="optDIV">
+				<label id="usernameText"></label>
+				<!--<i class="fas fa-plus-square"></i>-->
+				<button id="newChatButton" class="optionButtons" onclick="createNewChat()"><i class="fas fa-plus-square"></i></button>
+				
+				<button id="accountSettingsButton" class="optionButtons" onclick="viewAccountSettings()"><i class="fas fa-cog"></i></button>
+				
+				<button id="logoutButton" class="optionButtons" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
+			</div>
+			
+		</div>
+		<div id="contactsPanelDIV">
+			<label id="chatsLabel" class="infoText">Chats:</label>
+			<br id="spec"><br id="spec"><br id="spec">
+			
+		</div>
+
+
+
+
+
+		<div id="chatPanelDIV">
+
+			<div id="chatTitleDIV">
+				<div id="subDIV">
+					<img id="recPFP" class="chatTitleIMG" src="https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=612x612&w=0&k=20&c=AhqW2ssX8EeI2IYFm6-ASQ7rfeBWfrFFV4E87SaFhJE=" onclick="imageViewer(this.src)">
+					<!--<div id="recSTATUS"></div>-->
+					<label id="chatTitle">Select a Chat</label>
+					<div id="recSTATUS"></div>
+				</div>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div id="messagesDIV">
+			</div>
+		</div>
+
+
+		<div id="typePanelDIV">
+			<button id="emojiButton" onclick="seeEmojis()"><i class="far fa-laugh"></i></button>
+			<input id="messageInput" autocomplete="off" type="text"> 
+			<button id="sendButton" onclick="sendMessage()"><i class="fas fa-arrow-alt-circle-right"></i></button>
+
+		</div>
+
+		<div id="emoPicker">
+			<div id="headerBar" class="bar">
+				<button class="emoIcons" id="ei1" value="Smileys & Emotion" onclick="selectCat(this.value)">
+					<i class="far fa-smile"></i>
+				</button>
+				<button class="emoIcons" id="ei2" value="People & Body" onclick="selectCat(this.value)">
+					<i class="fas fa-child"></i>
+				</button>
+				<button class="emoIcons" id="ei3" value="Activities" onclick="selectCat(this.value)">
+					<i class="fas fa-baseball-ball"></i>
+				</button>
+				<button class="emoIcons" id="ei4" value="Symbols" onclick="selectCat(this.value)">
+					<i class="fas fa-icons"></i>
+				</button>
+				<button class="emoIcons" id="ei5" value="Objects" onclick="selectCat(this.value)">
+					<i class="far fa-lightbulb"></i>
+				</button>
+				<button class="emoIcons" id="ei6" value="Food & Drink" onclick="selectCat(this.value)">
+					<i class="fas fa-hamburger"></i>
+				</button>
+				<button class="emoIcons" id="ei7" value="Travel & Places" onclick="selectCat(this.value)">
+					<i class="fas fa-plane"></i>
+				</button>
+				<button class="emoIcons" id="ei8" value="Animals & Nature" onclick="selectCat(this.value)">
+					<i class="fas fa-dog"></i>
+				</button>
+				<button class="emoIcons" id="ei9" value="Flags" onclick="selectCat(this.value)">
+					<i class="fas fa-flag"></i>
+				</button>
+				
+				<button id="closeEP" onclick="seeEmojis()"><i class="fas fa-times"></i></button>
+			</div>
+			<div id="nameBar" class="bar">
+				<label id="catName"></label>
+			</div>
+			<div id="emoBox">
+
+			</div>
+		</div>
+
+		<script src="js/emojis.js"></script>
+		<script src="js/homepageMain.js"></script>
+	</body>
+</html>

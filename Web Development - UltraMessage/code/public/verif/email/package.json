@@ -1,0 +1,11 @@
+{
+  "name": "email-testing",
+  "version": "1.0.0",
+  "description": "Tests if email can be sent to address specified by user in HTML form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harman Punchi",
+  "license": "ISC"
+}

@@ -22,46 +22,30 @@
 		</audio>
 
 	</head>    
-	<div id="mainBG" class="bg"></div> 
+	<div class="bg"></div> 
 	<body id="mainBody">
 		<div id="imgPUDIV" onclick="closeImageViewer()">
 			<img id="displayImage" onclick="closeImageViewer()">
 			<button id="closeButton" onclick="closeImageViewer()"><i class="fas fa-times"></i></button>
 		</div>
-
-		<div id="textPOPUP" class="popupDIV" onclick="closePopup()">
-			<div class="popup">
-				<img id="popupIMG" class="pImg">
-				<label id="popupTitle" class="pTitle"></label>
-				<label id="popupText" class="pText"></label>
+		<div id="popupDIV" onclick="closePopup()">
+			<div id="popup">
+				<img id="popupIMG">
+				<label id="popupTitle"></label>
+				<label id="popupText"></label>
 				<button id="okButton" onclick="closePopup()">Ok</button>
 			</div>
 			<button id="closeButton" onclick="closePopup()"><i class="fas fa-times"></i></button>
 		</div>
-
-		<div id="inputPOPUP" class="popupDIV">
-			<div class="popup">
-				<img id="iPopImg" class="pImg">
-				<label id="iPopTitle" class="pTitle"></label>
-
-				<label id="iPopPrompt" class="pText"></label><br>
-				<input id="iPopInput" autocomplete="off">
-				<button id="cancelButton" onclick="closeIPopup()">Cancel</button>
-				<button id="okButton" onclick="closeIPopup()">Ok</button>
-
-			</div>
-			
-		</div>
-	
+		<div class="bg-img"></div>
 		<div id="optionsDIV">
 			<img id="pfpIMG" onclick="imageViewer(this.src)">
 
-			
+			<label id="usernameText"></label>
 			<br>
 			<div id="optDIV">
-				<label id="usernameText">JohnDoe.01</label>
-				<!--<i class="fas fa-plus-square"></i>-->
 				<button id="newChatButton" class="optionButtons" onclick="createNewChat()"><i class="fas fa-plus-square"></i></button>
+				
 				
 				<button id="accountSettingsButton" class="optionButtons" onclick="viewAccountSettings()"><i class="fas fa-cog"></i></button>
 				
@@ -72,7 +56,7 @@
 		<div id="contactsPanelDIV">
 			<label id="chatsLabel" class="infoText">Chats:</label>
 			<br id="spec"><br id="spec"><br id="spec">
-			
+
 		</div>
 
 
@@ -83,7 +67,7 @@
 
 			<div id="chatTitleDIV">
 				<div id="subDIV">
-					<img id="recPFP" class="chatTitleIMG" src="https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=612x612&w=0&k=20&c=AhqW2ssX8EeI2IYFm6-ASQ7rfeBWfrFFV4E87SaFhJE=" onclick="imageViewer(this.src)">
+					<img id="recPFP" class="chatTitleIMG" onclick="imageViewer(this.src)">
 					<!--<div id="recSTATUS"></div>-->
 					<label id="chatTitle">Select a Chat</label>
 					<div id="recSTATUS"></div>
@@ -93,6 +77,11 @@
 			<div id="messagesDIV">
 			</div>
 		</div>
+
+		
+
+
+
 
 
 		<div id="typePanelDIV">

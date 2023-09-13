@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta meta name="viewport" content="width=device-width, user-scalable=no" />
+	<title>UltraMessage</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link id="cssControl" rel="stylesheet">
+	<link rel="icon" href="images/logo.png">
+</head>
+<body>
+	<!--<img id="mainBG" src="images/main-background.jpg">-->
+	<div id="mainBG"></div>
+	<div id="mainDIV">
+		<label class="titleLabel">UltraMessage</label>
+
+		<button id="openB" onclick="openUM()" class="mainOptionButton">Open</button>
+		<button id="registerB" onclick="register()" class="mainOptionButton">Register</button>
+
+		<img id="logo" src="images/logo.png">
+
+		<button onclick="toggleTheme()" id="themeSwitcher"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg></button>
+
+		<div onclick="toggleTheme()" id="themeBG"></div>
+	</div>
+	<script src="js/deviceDetection.js"></script>
+	<script src="js/indexClient.js"></script>
+	
+
+</body>
+
+</html>

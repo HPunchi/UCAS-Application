@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.theme-light {
+    --color-primary: #4275f5;
+    --color-secondary: #ffffff;
+    --font-color: #262020;
+ }.theme-dark {
+    --color-primary: #4275f5;
+    --color-secondary: #262020;
+    --font-color: #ffffff;
+ }
+
+body, html{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.bg-img{
+    background-image: url(https://images.hdqwalls.com/download/city-4k-buildings-skyscraper-view-l3-1920x1080.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+    /* background-size: 120%; */
+    
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    height: 100%;
+    width: auto;
+
+}
+
+#totalDIV{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	min-width: 660px;
+	max-width: 780px;
+	max-height: 600px;
+	min-height: 600px;
+}
+
+
+#mainDIV{
+	background-color: var(--color-secondary);
+	border-radius: 45px;
+	text-align: center;
+	width: 100%;
+	height: 600px;
+
+	
+
+}
+#rememberMeLabel{
+	color: var(--font-color);
+	font-size: 18px;
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-weight: normal;
+	cursor: pointer;
+}
+#rmInput{
+	height: 15px;
+	width: 15px;
+	border-radius: 15px;
+	background-color: var(--color-secondary);
+	cursor: pointer;
+}
+#titleDIV{
+	border-radius: 45px;
+	position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+	width: 100%;
+}
+#mainTitle{
+	color: var(--font-color);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 60px;
+	font-weight: lighter;
+	position: absolute;
+	top: 20px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+}
+#userEntryDIV{
+	position: absolute;
+	
+	left: 5%;
+
+	text-align: center;
+
+}
+#sbDIV{
+	position: absolute;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, 30%);
+}
+.btns{
+	width: 200px;
+	height: 60px;
+	padding: 10px;
+	background-color: var(--color-primary);
+	color: #ffffff;
+	border-radius: 45px;
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 28px;
+
+	outline: none;
+	border-style: solid;
+	border: none;
+	font-weight: normal;
+    
+    box-shadow: 0px 6px 16px 4px rgba(0, 0, 0, 0.25);
+}
+
+.labelText{
+	color: var(--font-color);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+	text-decoration: underline;
+
+}
+
+
+.dataInput{
+	padding: 5px;
+	border-radius: 20px;
+	height: 30px;
+	width: 300px;
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+	border: 1px;
+	outline: none;	
+	box-shadow: none;
+	border-style: solid;
+	
+}
+
+#usernameLabel{
+	color: var(--font-color);
+}
+#usernameInput{
+	background-color: var(--color-secondary);
+	border-color: var(--font-color);
+	color: var(--font-color);
+}
+
+#passwordLabel{
+	color: var(--font-color);
+}
+#passwordInput{
+	background-color: var(--color-secondary);
+	border-color: var(--font-color);
+	color: var(--font-color);
+}
+.errorText{
+	color: rgb(255, 0, 0);
+	font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+}
+
+
+#customBtn{
+	background-color: var(--color-secondary);
+	border: solid;
+	border-color: var(--font-color) 0.5px;
+	outline: none;
+	height: 46px;
+	border-radius: 45px;
+	width: 275px;
+}
+#customBtn:hover{
+	cursor: pointer;
+}
+button{
+	cursor: pointer;
+}
+
+
+
+
+
+
+#theme-switcher{
+    border: none;
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    bottom: 15px;
+    outline: none;
+    left: 15px;
+    z-index: 9999;
+    cursor: pointer;
+    box-shadow: 0px 6px 16px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.25s ease-in-out;
+}
+
+#theme-switcher:hover{
+    box-shadow: none;
+}
+
+#theme-switcher svg{
+    fill: var(--font-color);
+}
+
+
+
+
+
+.container input:checked ~ .checkmark {
+  background-color: var(--color-primary);
+}
+
+

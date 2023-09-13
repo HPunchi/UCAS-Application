@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+
+		<link rel="stylesheet" href="css/signinStyles.css">
+		
+		
+
+		<link rel="icon" href="images/logo.png">
+
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+	    <script src="https://apis.google.com/js/api:client.js"></script>
+
+		<meta name="google-signin-client_id" content="412659898029-r8kmedgqjnas33b8ejjmelrra4ceuhv9.apps.googleusercontent.com">
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    	<script src="https://apis.google.com/js/api:client.js"></script>
+
+
+    
+	</head>
+	<body id="mainBody">
+		<div class="bg-img"></div>
+		<div id="totalDIV">
+		
+				
+
+			
+	
+			<div id="mainDIV">
+				<div id="titleDIV">
+					<label id="mainTitle">Login</label>
+
+				</div>
+				<br><br><br><br><br><br><br>
+				<div id="userEntryDIV">
+					<button id="backButton" class="btns" onclick="back()">Back</button>
+					<br><br>
+					<div id="usernameDIV">
+						<label id="usernameLabel" class="labelText">Username:</label><label class="errorText" style="display:none" id="usernameError">   Username not found.</label>
+						<br>
+						<input type="text" autocomplete="off" id="usernameInput" class="dataInput">
+					</div>
+
+					<br>
+
+					<div id="passwordDIV" style="display:none">
+						<label id="passwordLabel" class="labelText">Password:</label><label class="errorText" style="display:none"  id="passwordError">   This password is not correct.</label>
+						<br>
+						<input type="password" autocomplete="off" id="passwordInput" class="dataInput">
+					</div>
+
+					<br>
+
+
+
+					<!--<div id="googleButton" class="g-signin2" data-onsuccess="onSignIn"></div>-->
+
+					<div>
+						<label id="rememberMeLabel" onclick="check()">Remember Me</label>
+						<input type="checkbox" class="container" id="rmInput"><br><br>
+											 
+					</div>
+					<div id="sbDIV">
+						<button id="submitButton" class="btns" onclick="checkUsername()">Sign In</button>
+					</div>
+				</div>
+				
+			</div>
+			<div id="socialDIV">
+				<!--
+				<div id="customBtn" onclick="attachSignin()" class="customGPlusSignIn">
+			      	<img id="googleLogo" src="third-party-acc/google/main-logo.png">
+			      	<label id="googleLabel">Continue with Google</label>
+			    </div>-->
+			</div>
+		</div>
+		
+		<button onclick="toggleTheme()" id="theme-switcher"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon" class="svg-inline--fa fa-moon fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg></button>
+
+		<script>
+    
+		    var googleUser = {};
+		    var startApp = function() {
+		      gapi.load('auth2', function(){
+		        // Retrieve the singleton for the GoogleAuth library and set up the client.
+		        auth2 = gapi.auth2.init({
+		          client_id: '412659898029-r8kmedgqjnas33b8ejjmelrra4ceuhv9.apps.googleusercontent.com',
+		          cookiepolicy: 'single_host_origin',
+		          // Request scopes in addition to 'profile' and 'email'
+		          //scope: 'additional_scope'
+		        });
+		        attachSignin(document.getElementById('customBtn'));
+		      });
+		    };
+		    
+		    function attachSignin() {
+		      var element = document.getElementById("customBtn");
+		      auth2.attachClickHandler(element, {},
+		          function(googleUser) {
+		        
+		            var googleProfile = googleUser.getBasicProfile();
+		       
+		            var forename = googleProfile.bT;
+		            var surname = googleProfile.dR;
+		            var profilePicURL = googleProfile.fI;
+		            var email = googleProfile.kt;
+		            var idToken = googleProfile.wR;
+
+		            var username = email.replace("@gmail.com", "");
+		            console.log(username);
+		          }, function(error) {
+		            //alert("An error occured.");
+
+		          });
+		    }
+	    </script>
+		<script src="js/signinMain.js"></script>
+		<script>
+	    	startApp();
+	    	
+	    </script>
+	    <style> 
+	    	#socialDIV{
+	    		position: absolute;
+	    		top: 50%;
+	    		transform: translate(0%, -50%);
+	    		right: 140px;	
+	    	}
+	    	#customBtn{
+		        background-color: var(--color-secondary);
+		        border: none;
+		        outline: none;
+		        height: 46px;
+		        border-radius: 45px;
+		        width: 235px;
+		        position: absolute;
+		        top: 50%;
+		        left: 50%;
+		        margin-right: -50%;
+		        transform: translate(-50%, -50%);
+		        max-width: 235px;
+		        min-width: 235px;
+		        max-height: 46px;
+		        min-height: 46px;
+		        cursor: pointer;
+	      	}
+	      	#customBtn:hover{
+	      		cursor: pointer;
+	      	}
+	      	button{
+	      		cursor: pointer;
+	      	}
+	      	
+	      	#googleLabel{
+	      		position: absolute;
+	      		vertical-align: middle;
+	      		font-size: 18px;
+	      		padding-left: 10px;
+	      		line-height: 46px;
+	      		color: var(--font-color);
+	      		font-family: "Roboto", sans-serif;
+	      		text-decoration: underline;
+	      		cursor: pointer;
+	      	}
+	    </style>
+	</body>
+</html>   

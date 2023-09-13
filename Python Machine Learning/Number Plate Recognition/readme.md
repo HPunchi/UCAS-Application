@@ -2,7 +2,7 @@
 
 This software runs in a singular Python script. The program is designed to capture an image stored in a local accessible directory and then uses computer vision through the library 'OpenCV' to identify the registration plate and further uses the 'PyTesseract' library which reads the text using an OCR (Optical Character Recognition) algorithm which utilises machine learning and datasets to a fair extent. 
 
-A sample image is provided as default within the same folder labelled 
+A sample image is provided as default within the same folder as the script.
 
 ## Installation
 
@@ -39,10 +39,11 @@ The program should execute without errors. However, there is no guarantee that t
 - Orientation: the image must ideally taken from a straight viewpoint or at a very slight angle.
 - Lighting: pictures taken in darkness or during night may have less chances of being correctly processed.
 - Weather/obstructions: try to ensure the number plate is not obscured or blurred by anything (such as raindrops, snow, leaves, mud, etc.)
+
 The default image provided is an perfect example of a correctly chosen image.
 
 ## Further Development
-This program is highly effective and efficient at capturing number plates. A video file (perhaps from a CCTV camera covering a road or a car park) can be imported and read. A loop can be set up to analyse the video frame by frame at each analysis the frame can be passed as input into this algorithm. Plates can be identified and stored in an array. This would work as an ANPR system for car parking lots, highways, urban areas, etc.
+This program is highly effective and efficient at capturing number plates. A video file (perhaps from a CCTV camera covering a road or a car park) can be imported and read. A loop can be set up to analyse the video frame by frame, at each analysis the frame can be passed as input into this algorithm. Plates can be identified and stored in an array. This would work as an ANPR system for car parking lots, highways, urban areas, etc.
 
 
 
