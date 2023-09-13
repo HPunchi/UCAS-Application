@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta meta name="viewport" content="width=device-width, user-scalable=no" />
+	<title>Sign In</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/loginStyles.css">
+	<link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+	<div id="mainDIV">
+		<label id="usernameL" class="lbl">Username:</label><input id="usernameInput" class="dataInput">
+		<br><br>
+		<label id="passwordL" class="lbl">Password:</label><input id="passwordInput" type="password" class="dataInput">
+		<br><br>
+		<input id="rememberMe" type="checkbox"><label id="remLabel" onclick="toggleCheckbox()"class="lbl">Remember Me</label>
+		<br><br>
+		<button id="submitButton" onclick="signIn(document.getElementById('usernameInput').value, document.getElementById('passwordInput').value)">Login</button>
+
+	</div>
+</body>
+<script src="js/loginClient.js"></script>
+</html>

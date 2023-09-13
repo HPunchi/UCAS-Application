@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>UltraMessage</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link id="cssControl" rel="stylesheet">
+	<link rel="icon" href="images/logo.png">
+</head>
+<body>
+	<div id="mainBG"></div>
+	<div id="errorDIV">
+		<label id="errorName" class="lbl">Error Name</label>
+		<label id="errorInfo" class="lbl">Error Info</label>
+		<button id="dismissBtn" onclick="dismissError()" class="btn">Dismiss</button>
+	</div>
+	<button onclick="toggleTheme()" id="themeSwitcher">
+		<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg>
+	</button>
+	<button id="backButton" onclick="back()" class="mainOptionButton">Back</button>
+
+	<div id="aDIV" class="mainDIV" style="display:block">
+		<div id="name">
+			<label id="nameL" class="fieldLabel">Name:</label><br>
+			<input id="nameI" onkeyup="vName(this.value)" class="textInput">
+			<button id="nameC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+		<div id="dob">
+			<label id="dobL" class="fieldLabel">Date of Birth:</label>
+			<input id="day1I" name="d1" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="d">
+			<input id="day2I" name="d2" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="d">
+			<label id="slash1" class="fieldLabel">/</label>
+			<input id="month1I" name="m1" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="m">
+			<input id="month2I" name="m2" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="m">
+			<label id="slash2" class="fieldLabel">/</label>
+			<input id="year1I" name="y1" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="y">
+			<input id="year2I" name="y2" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="y">
+			<input id="year3I" name="y3" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="y">
+			<input id="year4I" name="y4" onkeyup="vDob(this.name, this.value)" class="textInput sdInput" placeholder="y">
+
+
+			<button id="dobC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+		<div id="username">
+			<label id="usernameL" class="fieldLabel">Username:</label>
+			<input id="usernameI" onfocusout="verifyUsername(this.value)" onkeyup="vUsername(this.value)" class="textInput">
+			<button id="usernameC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+		<div id="password1">
+			<label id="password1L" class="fieldLabel">Password:</label>
+			<input type="password" id="password1I" onfocusout="vPassword1(this.value)" class="textInput">
+			<button id="password1C" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+		<div id="password2">
+			<label id="password2L" class="fieldLabel">Confirm Password:</label>
+			<input type="password" id="password2I" onfocusout="vPassword2(this.value)" class="textInput">
+			<button id="password2C" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+	</div>
+
+	<div id="bDIV" class="mainDIV" style="display:none">
+		<div id="email">
+			<label id="emailL" class="fieldLabel">Email Address:</label><br>
+			<input id="emailI" onkeyup="patrolEmailLower(this.value)" onfocusout="vEmail(this.value)" class="textInput" type="email">
+			<button id="emailC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+		<button id="verifButton" class="mainOptionButton" onclick="sendVerifCode()">Verify</button>
+		<div id="verifCode">
+			<label id="verifCodeL" class="fieldLabel">Verification Code:</label>
+			<input id="code1" onkeyup="checkCodeEntry(this.id)" class="textInput sdInput">
+			<input id="code2" onkeyup="checkCodeEntry(this.id)" class="textInput sdInput">
+			<input id="code3" onkeyup="checkCodeEntry(this.id)" class="textInput sdInput">
+			<input id="code4" onkeyup="checkCodeEntry(this.id)" class="textInput sdInput">
+			<input id="code5" onkeyup="checkCodeEntry(this.id)" class="textInput sdInput">
+			<input id="code6" onkeyup="checkCodeEntry(this.id)" class="textInput sdInput">
+			<button id="verifCodeC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+	</div>
+
+	<div id="cDIV" class="mainDIV" style="display:none">
+		<div id="pfp">
+			<label id="pfpL" class="fieldLabel">Profile Picture:</label>
+
+			<img id="previewImage" src="https://firebasestorage.googleapis.com/v0/b/ultramessage-434eb.appspot.com/o/default_icon.png?alt=media&token=eec5b358-3a52-4824-8da7-12261be20951" onerror="this.src='https://firebasestorage.googleapis.com/v0/b/ultramessage-434eb.appspot.com/o/default_icon.png?alt=media&token=eec5b358-3a52-4824-8da7-12261be20951">
+
+			<input id="pfpI" placeholder="Enter URL" class="textInput">
+			<button id="pfpC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+
+			
+			<div id="uploadDIV" onclick="launchFilePicker()">
+				<button id="uploadButton">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-circle-up" class="svg-inline--fa fa-arrow-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
+				</button>
+				<label id="uploadLabel" class="fieldLabel">Upload</label>
+			</div>
+
+
+			<button id="prevBtn" class="link" onclick="previewImage()">Preview</button>
+			<button id="resetBtn" class="link" onclick="resetImage()">Reset</button>
+		</div>
+		
+	</div>
+
+	<div id="dDIV" class="mainDIV" style="display:none">
+		<div id="bio">
+			<label id="bioL" class="fieldLabel">Bio:</label>
+			<textarea id="bioI" class="dataText"></textarea>
+			<button id="bioC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+		</div>
+	</div>
+	<div id="eDIV" class="mainDIV" style="display:none">
+		<div id="wallpaper">
+			<img id="previewWallpaper" src="/images/default_wallpaper.png">
+			<label id="wallpaperL" class="fieldLabel">Wallpaper:</label>
+
+			<input id="wallpaperI" placeholder="Enter URL" class="textInput">
+			<button id="wallpaperC" onclick="clearInput(this.id)" class="clearButton"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
+
+
+			<div id="uploadDIV" onclick="wpLaunchFilePicker()">
+				<button id="uploadButton">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-circle-up" class="svg-inline--fa fa-arrow-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
+				</button>
+				<label id="uploadLabel" class="fieldLabel">Upload</label>
+			</div>
+
+
+			<button id="wpprevBtn" class="link" onclick="wppreviewImage()">Preview</button>
+			<button id="wpresetBtn" class="link" onclick="wpresetImage()">Reset</button>
+		</div>
+	</div>
+
+
+	<button id="nextButton" onclick="next()" class="mainOptionButton">Next</button>
+	<script src="js/deviceDetection.js"></script>
+	<script src="js/registerClient.js"></script>
+</body>
+
+</html>

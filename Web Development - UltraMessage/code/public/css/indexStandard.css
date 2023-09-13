@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.theme-light {
+    --color-primary: #4275f5;
+    --color-secondary: #ffffff;
+    --font-color: #262020;
+    --button-color:  #ededed;
+}.theme-dark {
+    --color-primary: #4275f5;
+    --color-secondary: #262020;
+    --font-color: #ffffff;
+    --button-color:  #454343;
+}
+
+body{
+	background-color:  var(--color-secondary);
+	overflow: hidden;
+}
+.titleLabel{
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: var(--font-color);
+    font-weight: lighter;
+    font-size: 50px;
+    position: absolute;
+    top:  50px;
+	left:  30px;
+}
+.mainOptionButton{
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: var(--font-color);
+    background-color: var(--button-color);
+    border-radius:  16px;
+    margin-top:  20px;
+	margin-bottom:  20px;
+	position: absolute;
+	padding:  10px;
+	left:  30px;
+	height:  40px;
+	width:  160px;
+	
+}
+#mainDIV{
+	position: absolute;
+	bottom: 0px;
+	left:  0px;
+	width:  500px;
+	height:  300px;
+	max-width: 500px;
+	min-width: 500px;
+	max-height: 300px;
+	max-width: 300px;
+}
+#openB{
+	top:  130px;
+}
+#registerB{
+	top:  200px;
+}
+
+#mainBG{
+	height: 100%;
+	width: 100%;
+	background-color: var(--color-secondary);
+	
+	background-repeat: no-repeat;
+	background-position: center;
+	background-blend-mode: hard-light;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 500px 100%, 500px calc(100% - 300px), 0 calc(100% - 300px));
+	position: absolute;	
+	top:  0px;
+	left:  0px;
+	z-index: -1;
+	animation: mymove 20s linear infinite;
+	
+}
+#logo{
+	position: absolute;
+	right: 30px;
+	top:  70px;
+	height:  160px;
+	width:  calc(160px / (386 / 279));
+}
+#themeSwitcher{
+	position: absolute;
+	height:  40px;
+	width:  40px;
+	color:  var(--font-color);
+	background-color:  rgba(0, 0, 0, 0);
+	bottom:  25px;
+	right:  65px;
+	border-radius: 50%;
+
+
+}
+#themeBG{
+	position: absolute;
+	height:  50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color:  var(--button-color);
+	right:  60px;
+	bottom: 21px;
+	z-index: -1;
+}
+
+#openB{
+	animation: oBIn 2s;
+}
+#registerB{
+	animation:  rBIn 2s;
+}
+#logo{
+	animation: logoIn 2s;
+}
+.titleLabel{
+	animation: titleIn 2s;
+}
+#themeSwitcher{
+	animation: themeIn 2s;
+}
+#themeBG{
+	animation: themeBGIn 2s;
+}
+@keyframes mymoove{
+	0% {
+		background-color:  red;
+	}
+	8.3% {
+		background-color:  darkorange;
+	}
+	16.7% {
+		background-color:  darkyellow;
+	}
+	25% {
+		background-color:  lightgreen;
+	}
+	33.3% {
+		background-color:  lightskyblue;
+	}
+	41.7% {
+		background-color:  aqua;
+	}
+	50% {
+		background-color:  pink;
+	}
+	58.3% {
+		background-color:  aqua;
+	}
+	66.7% {
+		background-color:  lightskyblue;
+	}
+	75% {
+		background-color:  lightgreen;
+	}
+	83.3% {
+		background-color:  darkyellow;
+	}
+	91.7% {
+		background-color:  darkorange;
+	}
+	100% {
+		background-color:  red;
+	}
+}
+@keyframes titleIn{
+	0%{
+		top:  50px;
+		left:  -400px;
+	}
+	100%{
+		top:  50px;
+		left:  30px;
+	}
+}
+@keyframes logoIn{
+	0%{
+		top:  -360px;
+	}
+	100%{
+		top:  70px;
+	}
+}
+@keyframes themeIn{
+	0%{
+		right: -365px;
+	}
+	100%{
+		right: 65px;
+	}
+}
+@keyframes themeBGIn{
+	0%{
+		right: -370px;
+	}
+	100%{
+		right: 60px;
+	}
+}
+@keyframes oBIn{
+	0%{
+		top:  560px;
+	}
+	100%{
+		top:  130px;
+	}
+}
+@keyframes rBIn{
+	0%{
+		top:  630px;
+	}
+	100%{
+		top:  200px;
+	}
+}
+
+
+
+button{
+	cursor: pointer;
+	border: none;
+	outline:  none;
+}
+
+
+.mainOptionButton:hover{
+	color:  var(--color-primary);
+}

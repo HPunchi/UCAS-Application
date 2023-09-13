@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.theme-light {
+    --color-primary: #4275f5;
+    --color-secondary: #ffffff;
+    --font-color: #262020;
+    --button-color:  #ededed;
+}.theme-dark {
+    --color-primary: #4275f5;
+    --color-secondary: #262020;
+    --font-color: #ffffff;
+    --button-color:  #454343;
+}
+
+body{
+
+	background-image:  url();
+	height:  100%;	
+	width:  100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:  auto;
+	background-position: center;
+}
+
+
+#chatDIV{
+	border: solid black;
+	height:  500px;
+	width:  400px;
+	position: absolute;
+	left:  300px;
+	top:  10px;
+}
+#chatOpen{
+	font-weight: bold;
+}
+div{
+	overflow: auto;
+}
+
+#messageInput{
+	position: absolute;
+	top: 520px;
+	left:  300px;
+	height:  35px;
+	width:  396px;
+	border:  solid black;
+}
+#contactsDIV{
+	position: absolute;
+	top:  10px;
+	left:  10px;
+	border:  solid black;
+	height:  547px;
+	width:  280px;
+}
+#chatOpenDIV{
+	position: absolute;
+	top:  10px;
+	left:  720px;
+}
+#optionsDIV{
+	position: absolute;
+	left:  720px;
+	top:  100px;
+}
+#loggedInAs{
+	font-weight: bold;
+}
+.contactBtn{
+	width:  100%;
+	height:  40px;
+	text-align: center;
+	background-color:  rgba(0, 0, 0, 0);
+	border-left:  none;
+	border-right:  none;
+
+
+}
+.sentMessage{
+	color:  blue;
+}
+.recievedMessage{
+	color:  black;
+}
+
+
+
+
+
+
+#controlDIV{
+	width:  100%;
+	height:  40px;
+	position: absolute;
+	bottom:  0px;
+	left:  0px;
+	background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.controlBtn{
+	height:  40px;
+	position: absolute;
+	top: calc(100% - 40px);
+	background-color: rgba(0, 0, 0, 0);
+	text-align: center;
+}

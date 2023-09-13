@@ -1,0 +1,43 @@
+--ABOUT-------------------------
+Welcome to UltraMessage, dear user! We are grateful for your wise decision to use UltraMessage.
+UltraMessage is an application designed to connect people all over the globe.
+Using UltraMessage, you can connect to anyone, anywhere, at any time. All that's required is a browser, an Internet connection, and someone to talk to!
+However, in order to use this service, an UltraMessage Account is required.
+
+
+--SIGN UP-----------------------
+If you do not have an UltraMessage Account, you must sign up for one.
+This can be done by pressing the "Register" button on the initial page or this link: https://ultramessage.herokuapp.com/signUpPage.html.
+In this section, you will be prompted to enter your personal details and account preferences. To view how your data is managed and stored, please view the our 'Data and Privacy Policy'.
+Below, are the series of steps you will be taken through to sign up for a new account:
+
+1) Name - You will be prompted to enter your first and last name. Any numeric characters or special symbols will trigger an error.
+2) Date Of Birth (DoB) - Then, you will need to enter your date of birth. Errors will be raised if the date entered cannot occur, for example the 31st of November or dates that are in the future.
+3) Gender - Now, you will have to either select 'Male', 'Female', or 'Other'.
+4) Username - This is a crucial stage in the sign up procedure. The username is used to identify users on the service, and is unique. Any taken usernames will raise errors. Please note, that this cannot be changed in the future.
+		The username must follow these guidelines:
+		--> It must not contain any innappropiate language or text.
+		--> It is recommended not to put your real name or any personal information about you in it.
+		--> It must not offend any specific person and/or group, religion, culture, belief, etc.
+		--> It is visible to everyone, so be cautious of what you choose.
+		Should UltraMessage believe that a username is not following these guildines (mainly if its offensive), UltraMessage maintains the right to remove this account without advance notice or warning, however an email
+		will be sent to the owner of the account to notify them of this action, along with specific reasoning to why this decision was taken. 
+5) Password - The password of your account is also extremely essential as should one know it, they can access your account. The password you enter on the screen cannot be screen so any people around you cannot see what you are
+		entering. Your account's password must follow these rules:
+		--> Must be greater than 6 characters in length.
+		--> Must contain at least 1 capital letter.
+		--> Must contain at least 1 lower case letter.
+		It is also recommended to use numbers and digits. Please refrain from using your name in your password as people knowing your name are more likely to be able to crack this password and access your account.
+		
+		To ensure, you are absolutely sure of your password, there is a separate entry to confirm your password, errors will be raised if it does not match your original one.
+6) Country - Simply click the box and select the country you live in. This will be able to be seen by others. 
+7) Email Address - This is our form of verifying this account. Enter a desired email address, and UltraMessage will email you a six digit code, which will need to be entered. Please make sure that you view the email address you register
+		regularly because any updates about your account or important information will be sent here by UltraMessage.
+***steps below are optional***
+8) Profile Picture - This is an image representing your account. It can be of yourself (given you understand others can see this), or a picture from the internet. Should you choose to upload an picture of yourself, it is likely to be 
+		stored on your device locally. Therefore, please click the 'File Upload' button and a browse window will open. This will enable you to navigate to the directory of your desired image and to choose it. However, if you
+		want to use another image from the Internet, find the image, click 'Copy Image Link' or 'Copy Image Address' and paste this into the 'URL' entry box. On the right hand side, a preview of your profile picture is 
+		available at all times. Furthermore, should you not wish to have a profile picture, you may click 'Next' or 'Skip this Step' in the corners. 
+9) Bio
+10) Wallpaper
+

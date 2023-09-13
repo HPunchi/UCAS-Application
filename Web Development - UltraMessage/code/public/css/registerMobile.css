@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.theme-light {
+    --color-primary: #4275f5;
+    --color-secondary: #ffffff;
+    --font-color: #292727;
+    --button-color:  #ededed;
+    --scroll-hover: #b3b4b5;
+}.theme-dark {
+    --color-primary: #4275f5;
+    --color-secondary: #262020;
+    --font-color: #ffffff;
+    --button-color:  #454343;
+    --scroll-hover: #575859;
+}
+
+body{
+	background-color:  var(--color-secondary);
+	width: 100%;
+    height: 100%;
+    overflow-x:  hidden;
+    overflow-y: auto;
+}
+input{
+    outline:  none;
+    border:  0.5px solid;
+}
+
+#aDiv{
+    overflow-y: auto;
+}
+#mainBG{
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-secondary);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute; 
+    top:  0px;
+    left:  0px;
+    z-index: -1;
+    
+}
+.mainDIV{
+    overflow: scroll;
+    width:  500px;
+    height:  calc(100% - 120px);
+    position: absolute;
+    left:  0px;
+    top:  60px;
+    
+}
+#themeSwitcher{
+    position: absolute;
+    height:  40px;
+    width:  40px;
+    color:  var(--font-color);
+    background-color:  rgba(0, 0, 0, 0);
+    top:  20px;
+    left:  40px;
+    border-radius: 50%;
+    transition: 1s all;
+    animation:  tsEntry 2.2s;
+}
+.mainOptionButton{
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: var(--font-color);
+    background-color: var(--button-color);
+    border-radius:  16px;
+    margin-top:  20px;
+    margin-bottom:  20px;
+    position: absolute;
+    padding:  10px;
+    left:  50%;
+    transform: translate(-50%, 0%);
+    height:  40px;
+    width:  160px;
+}
+.mainOptionButton:hover{
+    color:  var(--color-primary);
+    box-shadow: none;
+}
+#backButton{
+    top:  0px;
+}
+#nextButton{
+    bottom:  0px;
+}
+#errorDIV{
+    position: absolute;
+    border: 0.8px solid;
+    height:  160px;
+    width:  300px;
+    background-color: var(--color-secondary);
+    border-color:  var(--font-color);
+    border-radius: 10px;
+    bottom:  10px;
+    right:  -490px; 
+    text-align: center;
+}
+.lbl{
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color:  var(--font-color);
+    font-weight:  lighter;
+    padding:  5px;
+    position: absolute;  
+}
+.btn{
+    height:  40px;
+    width: 100px;
+    position: absolute;
+    bottom:  30px;
+    left:  50%;
+    transform: translate(-50%, 50%);
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color:  var(--font-color);
+    background-color:  var(--button-color);
+    font-weight:  lighter;
+    border-radius: 16px;
+    font-size:  18px;
+}
+#errorName{
+    font-size: 26px;
+    top:  10px;
+    left:  5px;
+    width:  290px;
+    text-align: center; 
+}
+#errorInfo{
+    font-size: 19px;
+    left:  5px;
+    top:  42px;
+}
+.fieldLabel{
+    position: absolute;
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color:  var(--font-color);
+    font-weight:  lighter;
+   
+    font-size:  22px;
+    padding-right: 5px;
+    padding-left: 5px;
+    top:  5px;
+    left:  10px;
+}
+.textInput{
+    position: absolute;
+    width:  300px;
+    height:  35px;
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    background-color:  var(--color-secondary);
+    color:  var(--font-color);
+    font-weight:  lighter;
+    border-color:  var(--font-color);
+    border-radius:  16px;
+    font-size:  18px;
+    padding-right: 5px;
+    padding-left: 5px;
+    top:  40px;
+    left:  10px;
+}
+.clearButton{
+    position: absolute;
+    width:  25px;
+    height:  25px;
+    color:  var(--font-color);
+    background-color: rgba(0, 0, 0, 0);
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-weight: lighter;
+    top:  50px;
+    right:  36px;
+}
+.sdInput{
+    height:  45px;
+    width:  25px;
+    font-size: 23px;
+    text-align: center;
+}
+
+
+#wallpaper{
+    position: absolute;
+    top:  0px;
+    left:  0px;
+    width:  100%;
+    bottom:  0px;
+    animation:  wallpaperA 1.2s; 
+}
+#bio{
+    position: absolute;
+    top:  0px;
+    left:  0px;
+    width:  100%;
+    bottom:  0px;
+    animation:  bioA 1.2s; 
+}
+#pfp{
+    position: absolute;
+    top:  0px;
+    left:  0px;
+    width:  100%;
+    bottom:  0px;
+    animation:  pfpA 1.2s;
+}
+#verifCode{
+    position: absolute;
+    top:  100px;
+    left:  0px;
+    width:  350px;
+    height:  100px;
+    animation:  verifCodeA 1.2s;
+    display: none;
+}
+#email{
+    position: absolute;
+    top:  0px;
+    left:  0px;
+    width:  350px;
+    height:  100px;
+    animation:  emailEntryA 1.2s;
+}
+#verifButton{
+    position: absolute;
+    top:  20px;
+    left:  350px;
+    height:  35px;
+    width:  100px;
+    animation: none;
+    display: none;
+}
+#name{
+    position: absolute;
+    top: 0px;
+    left:  0px;
+    width:  350px;
+    height:  100px;
+    animation:  nameEntryA 1.2s;
+}
+#dob{
+    position: absolute;
+    left:  0px;
+    top:  100px;
+    height:  100px;
+    width: 350px;
+    animation:  dobEntryA 1.2s;
+}
+#dobL{
+    top:  5px;
+}
+#dobC{
+    top:  53px;
+    left:  370px;
+}
+#username{
+    position: absolute;
+    left:  0px;
+    top:  200px;
+    width: 350px;
+    height:  100px;
+    animation:  usernameEntryA 1.2s;
+}
+#password1{
+    position: absolute;
+    left:  0px;
+    top:  300px;
+    width: 350px;
+    height:  100px;
+    animation:  password1EntryA 1.2s;
+}
+#password2{
+    position: absolute;
+    left:  0px;
+    top:  400px;
+    width:  350px;
+    height:  85px;
+    animation:  password2EntryA 1.2s;
+}
+@keyframes wallpaperA{
+    0%{
+        top: 100px;
+    }
+    100%{
+        top:  0px;
+    }
+}
+@keyframes bioA{
+    0%{
+        top: 100px;
+    }
+    100%{
+        top:  0px;
+    }
+}
+@keyframes pfpA{
+    0%{
+        top: 100px;
+    }
+    100%{
+        top:  0px;
+    }
+}
+@keyframes verifCodeA{
+    0%{
+        top: calc(100% - 100px);
+    }
+    100%{
+        top:  100px;
+    }
+}
+@keyframes emailEntryA{
+    0%{
+        top: 100px;
+    }
+    100%{
+        top:  0px;
+    }
+}
+@keyframes nameEntryA{
+    0%{
+        top:  100%;
+    }
+    100%{
+        top:  0px;
+    }
+}
+@keyframes dobEntryA{
+    0%{
+        top: calc(100% - 100px);
+    }
+    100%{
+        top: 100px;
+    }
+}
+@keyframes usernameEntryA{
+    0%{
+        top: calc(100% - 200px);
+    }
+    100%{
+        top: 200px;
+    }
+}
+@keyframes errorDIVEntry{
+    0%{
+        right:  -490px;
+    }
+    100%{
+        right: 10px;
+    }
+}
+@keyframes errorDIVExit{
+    0%{
+        right:  10px;
+    }
+    100%{
+        right: -490px;
+    }
+}
+button{
+    cursor: pointer;
+    border:  none;
+    outline:  none;
+}
+
+
+#code1{
+    left:  10px;
+}
+#code2{
+    left:  50px;
+}
+#code3{
+    left:  90px;
+}
+#code4{
+    left:  130px;
+}
+#code5{
+    left:  170px;
+}
+#code6{
+    left:  210px;
+}
+
+#day1I{  
+    left:  10px;
+}
+#day2I{
+    left:  50px;
+}
+#slash1{
+    top:  50px;
+    left:  90px;
+    font-size:  23px;
+}
+
+#month1I{
+    left:  110px;
+}
+#month2I{
+    left:  150px;
+}
+#slash2{
+    top:  50px;
+    left:  190px;
+}
+#year1I{
+    left: 210px;
+}
+#year2I{
+    left: 250px;
+}
+#year3I{
+    left: 290px;
+}
+#year4I{
+    left: 330px;
+}
+
+
+
+
+@keyframes bbEntry{
+    0%{
+        left:  100%;
+    }
+    100%{
+        left: 170px;
+    }
+}
+@keyframes tsEntry{
+    0%{
+        top:  100%;
+        left:  100%;
+    }
+    100%{
+        top:  20px;
+        left: 40px;
+    }
+}
+@keyframes password1EntryA{
+    0%{
+        top:  100%;
+    }
+    100%{
+        top:  300px;
+    }
+}
+@keyframes password2EntryA{
+    0%{
+        top:  100%;
+    }
+    100%{
+        top:  400px;
+    }
+}
+
+
+
+.link{
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: var(--color-primary);
+    margin-top:  20px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom:  20px;
+    border-radius: 16px;
+    border: 1px solid;
+    font-size:  19px;
+    position: absolute;
+    padding:  5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    top: 400px;
+    width:  107px;
+}
+.link:hover{
+    text-decoration: underline;
+}
+#resetBtn{
+    right:  20px; 
+}
+#prevBtn{
+    left:  20px;
+}
+#wpresetBtn{
+    right: 20px;
+}
+#wpprevBtn{
+    left:  20px;
+}
+#pfpC{
+    top:  358px;
+    left:  290px;
+}
+#pfpI{
+    top:  350px;
+}
+#previewImage{
+    position: absolute;
+    left:  50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    top:  60px;
+    padding:  -10px;
+    border:  solid 2px var(--font-color);
+    height:  250px;
+    width:  250px;
+    border-radius: 50%;
+    background-color:  var(--font-color);
+    object-fit: cover;
+}
+
+#uploadDIV{
+    position: absolute;
+    top:  350px;
+    left:  330px;
+    border:  solid 1px;
+    border-radius: 16px;
+    background-color: var(--color-secondary);
+    border-color:  var(--font-color);
+    height: 35px;    
+    width: 155px;
+
+}
+
+
+#uploadButton{
+    position: absolute;
+    top:  -6px;
+    left:  -10px;
+    color: var(--font-color);
+    background-color:  rgba(0, 0, 0, 0);
+    font-size: 45px;
+    border: none;
+    height:  35px;
+    width:  50px;
+}
+#uploadLabel{
+    position: absolute;
+    left:  50px;
+    color:  #757575;
+}
+
+
+#bioI{
+    position: absolute;
+    top: 40px;
+    left: 10px;
+}
+.dataText{
+    background-color: var(--color-secondary);
+    color:  var(--font-color);
+    font-family: "Roboto","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-weight:  lighter;
+    border-color:  var(--font-color);
+    font-size:  18px;
+    padding-right: 5px;
+    padding-left: 5px;
+    outline:  none;
+    max-width: 470px;
+    border-radius:  8px;
+    min-width: 470px;
+
+
+    height: calc(100% - 60px);
+}
+#bioC{
+    right: 15px;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--button-color);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-hover); 
+}
+
+
+textarea{
+    resize:  none;
+}
+
+#previewWallpaper{
+    position: absolute;
+    top:  40px;
+    left:  10px;
+    height:  270px;
+    width:  480px;
+    object-fit: cover;
+    border:  1px solid var(--font-color);
+}
+#wallpaperI{
+    top:  350px;
+}
+#wallpaperC{ 
+    top:  358px;
+    left:  290px;
+}

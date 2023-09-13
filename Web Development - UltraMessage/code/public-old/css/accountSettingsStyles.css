@@ -1,0 +1,113 @@
+body{              
+	background-image: url(https://images.hdqwalls.com/download/city-4k-buildings-skyscraper-view-l3-1920x1080.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: rgb(255, 255, 255);
+}
+#mainDIV{
+	background-color: rgb(255, 255, 255);
+	border-radius: 45px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	height: 600px;
+}
+#titleDIV{
+	border-radius: 45px;
+	position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+	width: 100%;
+}
+.mainButtons{
+	background-color: rgb(66, 117, 245);
+	color: rgb(255, 255, 255);
+	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 28px;
+	border-radius: 45px;
+	height: 60px;
+	border: none;
+	outline: none;
+	width: 200px;
+}
+#saveButton{
+	position: absolute;
+	bottom: 45px;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, 50%);
+}
+.editButton{
+	border: none;
+	background-color: rgba(255, 255, 255, 0);
+	outline: none;
+}
+#mainTitle{
+	color: rgb(0, 0, 0);
+	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	position: absolute;
+	top: 30px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+}
+#accountLabelsDIV{
+	position: absolute;
+	top: 15%;
+	left: 5%;
+	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 28px;
+
+	text-align: left;
+}
+#accountStatiDIV{
+	position: absolute;
+	top: 15%;
+	left: 30%;
+	color: rgb(66, 117, 245);
+	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 28px;
+	text-align: left;
+
+}
+#editButtonsDIV{
+	position: absolute;
+	top: 15%;
+	right: 5%;
+	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 28px;
+	text-align: center;
+}
+.editInput{
+	border-radius: 45px;
+	font-size: 24px;
+	color: rgb(0, 0, 0);
+	width: 250px;
+	height: 27px;
+	outline: none;
+	border: solid;
+	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	position: absolute;
+	right: -190%;
+}
+#togglePasswordButton{
+	background-color: rgba(66, 117, 245, 0);
+	color: rgb(0, 0, 0);
+	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 16px;
+	position: absolute;
+	right: 1%;
+	top: 44%;
+	border: none;
+	outline: none;
+	
+
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ultramessage-server",
+  "version": "1.0.0",
+  "description": "This is the server directory for the UltraMessage web app. For details on what UltraMessage is, please refer to our website.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Harman Punchi",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.8.1",
+    "@joeattardi/emoji-button": "^4.6.0",
+    "atob": "^2.1.2",
+    "child_process": "^1.0.2",
+    "copy-to-clipboard": "^3.3.1",
+    "cryptr": "^6.0.2",
+    "express": "^4.17.1",
+    "firebase": "^8.2.10",
+    "nedb": "^1.8.0",
+    "nodemailer": "^6.5.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "11.x"
+  }
+}
